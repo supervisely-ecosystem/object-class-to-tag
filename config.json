@@ -1,24 +1,23 @@
 {
-  "name": "Change video framerate",
+  "name": "Object classes to tags",
   "type": "app",
   "categories": [
-    "Videos"
+    "Tag"
   ],
-  "description": "Change video framerate with preserving duration (recodes video)",
+  "description": "Convert class names to tags associated with each object",
   "docker_image": "supervisely/base-py-sdk:6.17.4",
   "main_script": "src/main.py",
   "modal_template": "src/modal.html",
   "modal_template_state": {
-    "targetFps": 25
+    "resultClassName": "object"
   },
   "task_location": "workspace_tasks",
   "icon": "https://musique.opus-31.fr/images/aaa.png",
   "icon_background": "#FFFFFF",
-  "isolate": true,
   "headless": true,
   "context_menu": {
     "target": [
-      "videos_project"
+      "images_project"
     ]
   },
   "poster": "https://musique.opus-31.fr/images/aaa.png"

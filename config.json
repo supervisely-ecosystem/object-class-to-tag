@@ -11,6 +11,14 @@
   "modal_template_state": {
     "resultClassName": "object"
   },
+  "modal_template_data": {
+    "resultClassName": {
+      "description": "Name of single class for objects in new project."
+    },
+    "resultProjectName": {
+      "description": "Optional. If not set it will be named like \"original_project Tagged\"."
+    }
+  },
   "task_location": "workspace_tasks",
   "icon": "https://musique.opus-31.fr/images/aaa.png",
   "icon_background": "#FFFFFF",

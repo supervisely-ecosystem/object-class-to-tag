@@ -1,10 +1,6 @@
-import sys
 from typing import List
 
-if '--DebugImportEnvsFromFiles' in sys.argv:
-    import debug_utils
-    debug_utils.load_envs_from_files()
-
+import debug_utils  # before import sly
 import supervisely as sly
 
 import globals as g

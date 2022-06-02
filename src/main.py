@@ -56,7 +56,9 @@ def create_new_tags(src_meta: sly.ProjectMeta, tag_names_mapping):
     for cls in src_meta.obj_classes:
         new_tag = sly.TagMeta(name=cls.name,
                               value_type=sly.TagValueType.NONE,
-                              applicable_to=sly.TagApplicableTo.OBJECTS_ONLY)
+                              applicable_to=sly.TagApplicableTo.OBJECTS_ONLY,
+                              color=cls.color,
+                              hotkey=cls.hotkey)
         new_tags.append(new_tag)
 
     return sly.TagMetaCollection(new_tags)

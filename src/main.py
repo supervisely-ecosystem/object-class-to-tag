@@ -126,20 +126,18 @@ def classes_to_tags(api: sly.Api, result_class_name: str, result_project_name: s
 
     for dataset in datasets:
         res_dataset = api.dataset.create(res_project.id, dataset.name, change_name_if_conflict=True)
+        img_infos = api.image.get_list(dataset.id)
+        for img_infos_batch in sly.batched(img_infos):
+            img_names, img_hashes, img_ids = zip(*((i.name, i.hash, i.id) for i in img_infos_batch))
+            ann_jsons = api.annotation.download_batch(dataset.id, img_ids)
 
-        img_list = api.image.get_list(dataset.id)
-        for img_list_batch in sly.batched(img_list):
-            image_ids = [i.id for i in img_list_batch]
-            anns_json = api.annotation.download_batch(dataset.id, image_ids)
-            res_anns = []
-            for ann_json in anns_json:
-                ann = sly.Annotation.from_json(ann_json.annotation, meta)
-                new_ann = convertor.convert(ann)
-                res_anns.append(new_ann)
-            img_names, img_hashes = zip(*((i.name, i.hash) for i in img_list_batch))
+            anns = (sly.Annotation.from_json(ann_json.annotation, meta) for ann_json in ann_jsons)
+            res_anns = [convertor.convert(ann) for ann in anns]
+
             new_img_infos = api.image.upload_hashes(res_dataset.id, names=img_names, hashes=img_hashes)
             api.annotation.upload_anns([i.id for i in new_img_infos], res_anns)
-            progress.iters_done_report(len(img_list_batch))
+
+            progress.iters_done_report(len(img_infos_batch))
 
     sly.logger.debug('Finished classes_to_tags')
 

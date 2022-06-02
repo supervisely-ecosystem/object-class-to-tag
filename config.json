@@ -4,7 +4,7 @@
   "categories": [
     "Tag"
   ],
-  "description": "Convert class names to tags associated with each object",
+  "description": "Convert class names to tags associated with each object, merging existing classes to single one",
   "docker_image": "supervisely/base-py-sdk:6.17.4",
   "main_script": "src/main.py",
   "modal_template": "src/modal.html",
@@ -20,7 +20,7 @@
     }
   },
   "task_location": "workspace_tasks",
-  "icon": "https://musique.opus-31.fr/images/aaa.png",
+  "icon": "https://github.com/supervisely-ecosystem/object-class-to-tag/releases/download/v0.1.0/app-icon.png",
   "icon_background": "#FFFFFF",
   "headless": true,
   "context_menu": {

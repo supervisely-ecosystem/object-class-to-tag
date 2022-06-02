@@ -22,7 +22,7 @@ This app merges existing object classes into single one, and saves class names a
 
 
 #### Technical note.
-1. If there are classes with different shapes in source project (e.g., `Rectangle` and `Bitmap`), some output classes will be created. The new classes will be named with suffixes like `_rectangle` and `_bitmap`.
+1. If there are classes with different shapes (e.g., `Rectangle` and `Bitmap`), some output classes will be created. The new classes will be named with suffixes like `_rectangle` and `_bitmap`.
 2. In the case of name conflict, existing tags may be renamed with suffix `_AUTO_RENAMED`.  
 
 

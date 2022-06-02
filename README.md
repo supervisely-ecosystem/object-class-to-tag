@@ -31,9 +31,12 @@ This app merges existing object classes into single one, and saves class names a
 
 **Step 1**: Add app to your team from Ecosystem if it is not there.
 
+<img src="https://github.com/supervisely-ecosystem/object-class-to-tag/releases/download/v0.1.0/shot00.png"/>
 
 **Step 2**: Open context menu of project -> `Run App` -> `Object classes to tags` 
 
+<img src="https://github.com/supervisely-ecosystem/object-class-to-tag/releases/download/v0.1.0/shot01.png"/>
 
 **Step 3**: Input name of new object class and (optionally) name of output project. New project in the same workspace will be created.
 
+<img src="https://github.com/supervisely-ecosystem/object-class-to-tag/releases/download/v0.1.0/shot02.png"  width=500px/>

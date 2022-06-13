@@ -2,7 +2,8 @@
   "name": "Object classes to tags",
   "type": "app",
   "categories": [
-    "Tag"
+    "images",
+    "annotation transformation"
   ],
   "description": "Convert each class name to tag associated with objects, and merge existing classes into single one",
   "docker_image": "supervisely/base-py-sdk:6.17.4",

@@ -132,7 +132,7 @@ def classes_to_tags(api: sly.Api, result_class_name: str, result_project_name: s
             anns = (sly.Annotation.from_json(ann_json.annotation, meta) for ann_json in ann_jsons)
             res_anns = [convertor.convert(ann) for ann in anns]
 
-            new_img_infos = api.image.upload_hashes(res_dataset.id, names=img_names, hashes=img_hashes)
+            new_img_infos = api.image.upload_ids(res_dataset.id, names=img_names, ids=img_ids)
             api.annotation.upload_anns([i.id for i in new_img_infos], res_anns)
 
             progress.iters_done_report(len(img_infos_batch))
